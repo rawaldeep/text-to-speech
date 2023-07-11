@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Basic HTML Page</title>
+</head>
+<body>
+<script>
+    // Check if the browser supports speech synthesis
+if ('speechSynthesis' in window) {
+  // Create a new SpeechSynthesisUtterance object
+  var message = new SpeechSynthesisUtterance();
+
+  // Set the text to be spoken
+  message.text = "Hello, world!";
+
+  // Optional: Set the voice
+  // You can fetch available voices using speechSynthesis.getVoices() and select the desired one
+  // For example:
+  // message.voice = speechSynthesis.getVoices().find(voice => voice.lang === 'en-US');
+
+  // Optional: Set other properties like rate, pitch, volume, etc.
+  // For example:
+  // message.rate = 1.2;
+  // message.pitch = 0.8;
+
+  // Function to start speaking the text
+  function speakText() {
+    // Start speech synthesis
+    speechSynthesis.speak(message);
+  }
+
+  // Call the speakText function to start speaking the text
+  speakText();
+} else {
+  // Speech synthesis not supported
+  console.log("Speech synthesis is not supported in this browser.");
+}
+</script>
+
+    </body>
+</html>
+
